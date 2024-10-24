@@ -52,25 +52,6 @@ app.get("/restaurant", (request, response) => {
 });
 
 //Add any other required routes here
-app.get("/alerts", (request, response) => {
-  let alerts = [];
-
-  Restaurants.forEach((restaurant) => {
-    const specials = restaurantData[restaurant.id].menu.filter(
-      (item) => item.isSpecial
-    );
-    if (specials.length > 0) {
-      alerts.push({
-        restaurantName: restaurant.name,
-        specials: specials,
-      });
-    }
-  });
-
-  response.render("alerts", {
-    alerts: alerts.length > 0 ? alerts : null,
-  });
-});
 
 const port = 3000;
 app.listen(port, () => {

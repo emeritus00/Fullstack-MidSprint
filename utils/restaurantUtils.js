@@ -8,8 +8,14 @@ const { Dishes, Cuisines, Restaurants } = require("./data");
 function generateRandomMenuItem(cuisine) {
   // Implementation here...
   const dishes = Dishes[cuisine];
+
+  // Check if dishes exist for the given cuisine
+  if (!dishes || dishes.length === 0) {
+    return undefined;
+  }
+
   const randomIndex = Math.floor(Math.random() * dishes.length);
-  const menuItem = dishes[randomIndex];
+  const menuItem = { ...dishes[randomIndex] };
 
   // Add price and special status to the menu item
   menuItem.price = (Math.random() * (50 - 10) + 10).toFixed(2); // Random price between 10 and 50
@@ -33,11 +39,22 @@ function selectRandomCuisine() {
  * @returns {*} An object representing the restaurant's menu, including the cuisine type and items.
  */
 function generateMenu(cuisine) {
+  // Check if the provided cuisine is valid
+  if (!Dishes[cuisine]) {
+    return [];
+  }
+
   const numberOfItems = Math.floor(Math.random() * 5) + 3; // Random number of items between 3 and 7
   let menu = [];
+
   for (let i = 0; i < numberOfItems; i++) {
-    menu.push(generateRandomMenuItem(cuisine));
+    const menuItem = generateRandomMenuItem(cuisine);
+
+    if (menuItem) {
+      menu.push(menuItem); // Add the item to the menu if it exists
+    }
   }
+
   return menu;
 }
 

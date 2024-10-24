@@ -4,22 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= restaurant.name %> Menu</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
-    <h1><%= restaurant.name %> Menu</h1>
-    <p><strong>Cuisine:</strong> <%= cuisine %></p>
+    <main class="main-content">
+      <h1><%= restaurant.name %> Menu</h1>
+      <p><strong>Cuisine Type:</strong> <%= cuisine %></p>
 
-    <ul>
-      <% if (menu && menu.length > 0) { %> <% menu.forEach(item => { %>
-      <li>
-        <strong><%= item.name %></strong> - $<%= item.price %><br />
-        <%= item.description %><br />
-      </li>
-      <% }) %> <% } else { %>
-      <li>No menu items available</li>
-      <% } %>
-    </ul>
+      <ul>
+        <% if (menu && menu.length > 0) { %> <% menu.forEach((item) => { %>
+        <li>
+          <strong><%= item.name %></strong> - $<%= item.price %><br />
+          <%= item.description %>
+        </li>
+        <% }) %> <% } else { %>
+        <li>No menu items available</li>
+        <% } %>
+      </ul>
 
-    <a href="/">Back to Home</a>
+      <a href="/">Back to Home</a>
+    </main>
+    <footer>
+      &copy; <%= new Date().getFullYear() %> Restaurant Menu Application
+    </footer>
   </body>
 </html>
