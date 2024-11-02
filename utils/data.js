@@ -21,11 +21,11 @@ const Restaurants = [
   },
 ];
 
-const Cuisines = ["italian", "indian", "chinese", "vegan", "mexican"];
+const Cuisines = ["Italian", "Indian", "Chinese", "Vegan", "Mexican"];
 
 //Dishes generated courtesy of ChatGPT, I have absolutely no idea if these are real dishes, or if the descriptions are correct.
 const Dishes = {
-  italian: [
+  Italian: [
     {
       name: "Spaghetti Carbonara",
       description:
@@ -115,7 +115,7 @@ const Dishes = {
       description: "Tuscan fish stew with various seafood and bread.",
     },
   ],
-  chinese: [
+  Chinese: [
     {
       name: "Sweet and Sour Pork",
       description: "Pork cooked in a tangy sweet and sour sauce.",
@@ -195,7 +195,7 @@ const Dishes = {
       description: "Healthy bowl with grains, vegetables, and proteins.",
     },
   ],
-  vegan: [
+  Vegan: [
     {
       name: "Chickpea Salad",
       description: "Fresh salad with chickpeas, tomatoes, and cucumber.",
@@ -274,7 +274,7 @@ const Dishes = {
       description: "Stewed vegetable dish with zucchini, eggplant, and tomato.",
     },
   ],
-  mexican: [
+  Mexican: [
     {
       name: "Tacos al Pastor",
       description: "Tacos filled with marinated pork and pineapple.",
@@ -352,7 +352,7 @@ const Dishes = {
       description: "Refreshing fruit drink made with water and sugar.",
     },
   ],
-  indian: [
+  Indian: [
     {
       name: "Pani Puri",
       description:

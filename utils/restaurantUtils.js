@@ -6,10 +6,7 @@ const { Dishes, Cuisines, Restaurants } = require("./data");
  * @returns {*} A random menu item with a name, description, price, and special status.
  */
 function generateRandomMenuItem(cuisine) {
-  // Implementation here...
   const dishes = Dishes[cuisine];
-
-  // Check if dishes exist for the given cuisine
   if (!dishes || dishes.length === 0) {
     return undefined;
   }
@@ -18,8 +15,8 @@ function generateRandomMenuItem(cuisine) {
   const menuItem = { ...dishes[randomIndex] };
 
   // Add price and special status to the menu item
-  menuItem.price = (Math.random() * (50 - 10) + 10).toFixed(2); // Random price between 10 and 50
-  menuItem.isSpecial = Math.random() > 0.8; // 20% chance to be a daily special
+  menuItem.price = (Math.random() * (50 - 10) + 10).toFixed(2);
+  menuItem.isSpecial = Math.random() > 0.8;
 
   return menuItem;
 }
@@ -29,7 +26,6 @@ function generateRandomMenuItem(cuisine) {
  * @returns {*} A random cuisine type.
  */
 function selectRandomCuisine() {
-  // Implementation here...
   const randomIndex = Math.floor(Math.random() * Cuisines.length);
   return Cuisines[randomIndex];
 }
@@ -39,12 +35,11 @@ function selectRandomCuisine() {
  * @returns {*} An object representing the restaurant's menu, including the cuisine type and items.
  */
 function generateMenu(cuisine) {
-  // Check if the provided cuisine is valid
   if (!Dishes[cuisine]) {
     return [];
   }
 
-  const numberOfItems = Math.floor(Math.random() * 5) + 3; // Random number of items between 3 and 7
+  const numberOfItems = Math.floor(Math.random() * 5) + 3;
   let menu = [];
 
   for (let i = 0; i < numberOfItems; i++) {

@@ -33,7 +33,6 @@ app.get("/", (request, response) => {
  * The cuisine is randomly selected and a menu is generated based on it.
  */
 app.get("/restaurant", (request, response) => {
-  //Get the restaurants menu, and then display the page
   const restaurantId = request.query.restaurantId;
   const restaurant = Restaurants.find((r) => r.id === restaurantId);
   const menuData = restaurantData[restaurantId];
@@ -50,8 +49,6 @@ app.get("/restaurant", (request, response) => {
     });
   }
 });
-
-//Add any other required routes here
 
 const port = 3000;
 app.listen(port, () => {
